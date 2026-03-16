@@ -1,5 +1,6 @@
 import {useState} from "react"
 import axios from "axios"
+import API_BASE_URL from "../config"
 
 function GameForm({onGameAdded}){
 
@@ -17,7 +18,7 @@ setLoading(true)
 
 try {
 const res = await axios.post(
-"http://localhost:3000/api/games",
+`${API_BASE_URL}/api/games`,
 {title,platform,status},
 {
 headers:{Authorization:`Bearer ${token}`}

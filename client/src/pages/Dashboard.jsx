@@ -1,6 +1,7 @@
 import {useEffect,useState} from "react"
 import axios from "axios"
 import {useNavigate} from "react-router-dom"
+import API_BASE_URL from "../config"
 
 import GameForm from "../components/GameForm"
 import GameItem from "../components/GameItem"
@@ -21,7 +22,7 @@ if (!token) {
 }
 
 axios.get(
-"http://localhost:3000/api/games",
+`${API_BASE_URL}/api/games`,
 {
 headers:{Authorization:`Bearer ${token}`}
 }

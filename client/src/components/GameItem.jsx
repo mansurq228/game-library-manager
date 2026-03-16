@@ -1,5 +1,6 @@
 import axios from "axios"
 import {useState} from "react"
+import API_BASE_URL from "../config"
 
 function GameItem({game,onDelete}){
 
@@ -14,7 +15,7 @@ setLoading(true)
 
 try {
 await axios.delete(
-`http://localhost:3000/api/games/${game._id}`,
+`${API_BASE_URL}/api/games/${game._id}`,
 {
 headers:{Authorization:`Bearer ${token}`}
 }
